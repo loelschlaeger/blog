@@ -1,0 +1,13 @@
+# options specified here will apply to all posts in this folder
+
+# freeze computational output
+# (see https://quarto.org/docs/projects/code-execution.html#freeze)
+freeze: true
+
+# define author
+author: 
+  - name:
+      given: "Lennart"
+      family: "Oelschläger"
+    email: "oelschlaeger.lennart@gmail.com"
+    url: "https://loelschlaeger.de"

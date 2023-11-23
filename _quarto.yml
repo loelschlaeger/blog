@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: "_site"
+  render:
+    - "*.qmd"
+
+website:
+  title: "Lennart's Blog"
+  site-url: https://www.loelschlaeger.de/blog
+  description: "The blog of Lennart Oelschläger"
+  navbar:
+    search: true
+      
+format:
+  html:
+    theme: simplex
+
+comments:
+  utterances:
+    repo: loelschlaeger/blog
+
+
+
