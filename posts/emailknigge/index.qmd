@@ -2,39 +2,38 @@
 title: "E-Mail-Knigge"
 subtitle: "Ein paar amüsante Nachrichten von Studierenden"
 date: "2023-11-23"
+image: "mail0.png"
 categories: [german, misc]
 ---
 
-Meine Professorin im Bachelor hatte für Studierende folgenden Hinweis auf ihrer Webseite vermerkt:
+Auf der Webseite meiner Bachelor-Professorin prangt(e) eine Art "E-Mail-Knigge" für Studierende:
 
 > E-Mails ohne angemessene Anrede und angemessenen Gruß am Ende bleiben unbeantwortet. Als unangemessen betrachte ich insbesondere "Hallo", aber auch "Guten Tag" im Schriftverkehr.
 
-Das hatte mich überrascht, ich fand diese Direktheit unnötig. Sind eine angemessene Anrede und ein angemessener Gruß gerade im universitären Kontext denn keine Selbstverständlichkeit? Heute --- einige Jahre später und nachdem ich als wissenschaftlicher Mitarbeiter viel Mailkontakt mit Studierenden hatte --- bin ich desillusioniert...
+Das hatte mich überrascht, ich fand diese Direktheit unnötig. Muss darauf extra hingewiesen werden? Ist das denn keine Selbstverständlichkeit? Heute --- einige Jahre später und nachdem ich als wissenschaftlicher Mitarbeiter viel Mailkontakt mit Studierenden hatte --- bin ich desillusioniert...
 
 ::: {.callout-note appearance="simple"}
 
 ## Hinweis
 
-Die folgenden Mails sind echt und stammen von meinen Studierenden, ich habe sie aber anonymisiert. Ich hoffe, dass sich niemand wiedererkennt. Falls doch, so hoffe ich, dass die Person es mit Humor nehmen kann.
+Die folgenden Mails stammen von meinen Studierenden, ich habe sie anonymisiert. Ich hoffe, dass sich niemand wiedererkennt. Falls doch, so hoffe ich, dass die Person es mit Humor nehmen kann.
 
 :::
 
-![Hey Absender, das sollte machbar sein.](mail1.png)
+![Heyy Absender, das freut mich.](mail1.png)
 
-![Kein Problem, das kann ja mal vorkommen.](mail2.png)
+![Gar kein Problem, das kann ja ein- bis zweimal vorkommen.](mail2.png)
 
-![Gern geschehen, danke für die Rückmeldung.](mail3.png)
+![Dankbarkeit ist bekanntlich der Schlüssel zum Glück.](mail3.png)
 
-![Dankbarkeit ist bekanntlich der Schlüssel zum Glück.](mail4.png)
+![Ich habe beide Augen fest zugedrückt.](mail4.png)
 
-![Ich habe beide Augen fest zugedrückt.](mail5.png)
+![Ein Satz mit X, aber dafür eine mysteriöse Chatgruppe und viel Verbundenheit.](mail5.png)
 
-![Ein Satz mit X, aber dafür viel Verbundenheit.](mail6.png)
+![In Ordnung, ich habe dich reingemacht. Und jetzt soll ich dich besuchen kommen?](mail6.png)
 
-![In Ordnung, ich habe dich reingemacht. Und jetzt soll ich dich besuchen kommen?](mail7.png)
+![Wer ist Alex?](mail7.png)
 
-![Wer ist Alex?](mail8.png)
+![Gut, dann also kein Problem.](mail8.png)
 
-![Kein Problem.](mail9.png)
-
-![Was das wohl für eine schwierige Lage war?](mail10.png)
+![Eigentlich gilt die Deadline, aber wenn es nun eine schwierige Lage war...](mail9.png)
