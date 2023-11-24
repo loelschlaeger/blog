@@ -1,0 +1,8 @@
+---
+title: "SQL in R"
+subtitle: "\"The easiest way to use a database from R\" according to Hadley Wickham"
+date: "2023-11-23"
+categories: [R]
+---
+
+RSQLite

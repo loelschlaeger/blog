@@ -4,6 +4,9 @@
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: true
 
+# by default posts are drafts
+draft: true
+
 # define author
 author: 
   - name:
