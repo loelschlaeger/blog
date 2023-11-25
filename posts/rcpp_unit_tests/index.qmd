@@ -1,0 +1,15 @@
+---
+title: "Unit tests for Rcpp code"
+subtitle: "Unit testing R code is important and easy, and doing so for Rcpp code is not much more difficult."
+date: "2023-11-23"
+categories: [R, Rcpp]
+---
+
+```r
+R> testthat::use_catch()
+> Added C++ unit testing infrastructure.
+> Please ensure you have 'LinkingTo: testthat' in your DESCRIPTION.
+> Please ensure you have 'Suggests: xml2' in your DESCRIPTION.
+> Please ensure you have 'useDynLib(rcpptest, .registration = TRUE)' in your NAMESPACE.
+```
+

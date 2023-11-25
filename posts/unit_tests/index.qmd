@@ -1,0 +1,37 @@
+---
+title: "Unit tests for R code"
+subtitle: "Unit testing R code is important and easy, let's do it."
+date: "2023-11-23"
+categories: [R]
+---
+
+Unit tests help improve code reliability, quality, and collaboration, making your R package more robust and easier to maintain --- so you probably want to do this.
+
+If you develop your R code inside an RStudio project or an R package (which is generally a good idea), unit testing your R code is ridiculously simple with the `{usethis}` package, just call:
+
+```r
+R> usethis::use_testthat()
+✔ Adding 'testthat' to Suggests field in DESCRIPTION
+• Call `use_test()` to initialize a basic test file and open it for editing.
+```
+
+For demonstration, assume you have a script `add.R` as follows:
+
+```{r, filename = "add.R", eval = FALSE}
+#' Add two numbers
+#' @param x,y two numbers
+#' @return the sum \code{x + y}
+
+add <- function(x, y) x + y
+```
+
+To add unit tests for the `add()` function, just call `use_test()` in the console while `add.R` is your active file. This will create a `test-add.R` file inside the `tests/testthat` folder that is based in the root directory of your project or package. Add your unit tests here, for example:
+
+```{r, filename = "test-add.R", eval = FALSE}
+test_that("adding works", {
+  expect_equal(add(1, 2), 3)
+})
+```
+
+
+

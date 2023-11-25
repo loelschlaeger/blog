@@ -1,0 +1,14 @@
+{
+  "hash": "9756f9400561e57f7e51ada21838600b",
+  "result": {
+    "markdown": "---\ntitle: \"Unit tests for Rcpp code\"\nsubtitle: \"Unit testing R code is important and easy, and doing so for Rcpp code is not much more difficult.\"\ndate: \"2023-11-23\"\ncategories: [R]\n---\n\n\nUnit tests help improve code reliability, quality, and collaboration, making your R package more robust and easier to maintain --- so you probably want to do this.\n\nIf you develop your R code inside an RStudio project or an R package (which is generally a good idea), unit testing your R code is ridiculously simple with the `{usethis}` package, just call:\n\n```r\nR> usethis::use_testthat()\n✔ Adding 'testthat' to Suggests field in DESCRIPTION\n• Call `use_test()` to initialize a basic test file and open it for editing.\n```\n\nFor demonstration, assume you have a script `add.R` as follows:\n\n\n::: {.cell filename='add.R'}\n\n```{.r .cell-code}\n#' Add two numbers\n#' @param x,y two numbers\n#' @return the sum \\code{x + y}\n\nadd <- function(x, y) x + y\n```\n:::\n\n\nTo add unit tests for the `add()` function, just call `use_test()` in the console while `add.R` is your active file. This will create a `test-add.R` file inside the `tests/testthat` folder that is based in the root directory of your project or package. Add your unit tests here, for example:\n\n\n::: {.cell filename='test-add.R'}\n\n```{.r .cell-code}\ntest_that(\"adding works\", {\n  expect_equal(add(1, 2), 3)\n})\n```\n:::\n\n\n\n\n```r\nR> testthat::use_catch()\n> Added C++ unit testing infrastructure.\n> Please ensure you have 'LinkingTo: testthat' in your DESCRIPTION.\n> Please ensure you have 'Suggests: xml2' in your DESCRIPTION.\n> Please ensure you have 'useDynLib(rcpptest, .registration = TRUE)' in your NAMESPACE.\n```\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
