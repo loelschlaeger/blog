@@ -4,13 +4,41 @@
     "href": "index.html",
     "title": "Lennart's Blog",
     "section": "",
-    "text": "E-Mail-Knigge\n\n\nEin paar amüsante Nachrichten von Studierenden\n\n\n\n\ngerman\n\n\nmisc\n\n\n \n\n\n\n\nNov 23, 2023\n\n\nLennart Oelschläger\n\n\n\n\n\n\nNo matching items"
+    "text": "Assignments in R\n\n\nThe subtle difference between x &lt;- 3 and x = 3\n\n\n\n\nR\n\n\n \n\n\n\n\nDec 3, 2023\n\n\nLennart Oelschläger\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/email_knigge/index.html",
-    "href": "posts/email_knigge/index.html",
-    "title": "E-Mail-Knigge",
+    "objectID": "posts/assignments_in_r/index.html",
+    "href": "posts/assignments_in_r/index.html",
+    "title": "Assignments in R",
     "section": "",
-    "text": "Auf der Webseite meiner Bachelor-Professorin prangt(e) eine Art “E-Mail-Knigge” für Studierende:\n\nE-Mails ohne angemessene Anrede und angemessenen Gruß am Ende bleiben unbeantwortet. Als unangemessen betrachte ich insbesondere “Hallo”, aber auch “Guten Tag” im Schriftverkehr.\n\nDas hatte mich überrascht, ich fand diese Direktheit unnötig. Muss darauf extra hingewiesen werden? Ist das denn gerade an einer Universität keine Selbstverständlichkeit? Heute — einige Jahre später und nachdem ich als wissenschaftlicher Mitarbeiter viel Mailkontakt mit Studierenden hatte — bin ich desillusioniert…\n\n\n\n\n\n\nHinweis\n\n\n\nDie folgenden Mails stammen von meinen Studierenden, ich habe sie anonymisiert. Ich hoffe, dass sich niemand wiedererkennt. Falls doch, so hoffe ich, dass die Person es mit Humor nehmen kann.\n\n\n\n\n\nHeyy Absender, das freut mich.\n\n\n\n\n\nGar kein Problem, das kann ja ein- bis zweimal vorkommen.\n\n\n\n\n\nDankbarkeit ist bekanntlich der Schlüssel zum Glück.\n\n\n\n\n\nIch habe beide Augen fest zugedrückt.\n\n\n\n\n\nEin Satz mit X, aber dafür eine mysteriöse Chatgruppe und viel Verbundenheit.\n\n\n\n\n\nIn Ordnung, ich habe dich reingemacht. Und jetzt soll ich dich besuchen kommen?\n\n\n\n\n\nWer ist Alex?\n\n\n\n\n\nGut, dann also kein Problem.\n\n\n\n\n\nEigentlich gilt die Deadline, aber wenn es nun eine schwierige Lage war…"
+    "text": "In programming, assignment means linking a variable to a value, so the variable can represent that value later in the code. In R specifically, to assign the value 3 to the variable x, one can use\nx &lt;- 3\nor\nx = 3\nBoth have the same effect, so does it matter which one we use? Long story short: not really."
+  },
+  {
+    "objectID": "posts/assignments_in_r/index.html#a-bit-of-history",
+    "href": "posts/assignments_in_r/index.html#a-bit-of-history",
+    "title": "Assignments in R",
+    "section": "A bit of history",
+    "text": "A bit of history\nBack in 1993, when R was first launched, &lt;- was the only assignment operator. Meanwhile, = had a different role: it was (and still is) used for linking function arguments with their values, like in\n\nrnorm(1, mean = 10)\n\n[1] 10.2524\n\n\nIn 2001, to make things easier for new users, especially those familiar with languages like C, the R team introduced the use of = as an assignment operator too. The context now makes the intent clear: x = 3 shall be an assignment, while f(x = 3) means calling function f with x set to 3."
+  },
+  {
+    "objectID": "posts/assignments_in_r/index.html#be-aware-of-ambiguity",
+    "href": "posts/assignments_in_r/index.html#be-aware-of-ambiguity",
+    "title": "Assignments in R",
+    "section": "Be aware of ambiguity",
+    "text": "Be aware of ambiguity\nThe = symbol now has two distinct meanings which can lead to ambiguity: either it is an assignment operator or a syntax token for named argument passing in function calls. R distinguishes these uses based on context.\nWithin any code of the form &lt;function_name&gt;(&lt;argname&gt; = &lt;value&gt;, ...), the = is the token for naming arguments and is not an assignment. There are also scenarios where using = is not allowed:\n\nif (x = 3) { }\n\nError: &lt;text&gt;:1:7: unexpected '='\n1: if (x =\n          ^\n\n\n\nwhile (x = 3) { }\n\nError: &lt;text&gt;:1:10: unexpected '='\n1: while (x =\n             ^\n\n\n\nfor (y in x = 1:3) { }\n\nError: &lt;text&gt;:1:13: unexpected '='\n1: for (y in x =\n                ^\n\n\nIn contexts other than function calls, = refers to the assignment operator. In particular, merely putting parentheses around the sub-expression makes any of the above valid and an assignment:\n\nrm(x)\nif ((x = 3)) { }\n\nNULL\n\nx\n\n[1] 3\n\n\n\nrm(x)\nwhile ((x = 3)) { break }\nx\n\n[1] 3\n\n\n\nrm(x)\nfor (y in (x = 1:3)) { }\nx\n\n[1] 1 2 3"
+  },
+  {
+    "objectID": "posts/assignments_in_r/index.html#so-what-to-do",
+    "href": "posts/assignments_in_r/index.html#so-what-to-do",
+    "title": "Assignments in R",
+    "section": "So what to do?",
+    "text": "So what to do?\nThe choice between using = or &lt;- for assignments in R comes down to personal preference:\n\nMany opt for = due to familiarity and its brevity in typing.\nHowever, R traditionalists prefer &lt;- for its clarity, especially in shared or published code.\nPersonally, I lean towards the arrow notation, with spaces on both sides for readability.\n\nFor those who prefer = but wish to conform to the more prevalent &lt;- in publicly shared code (like on CRAN), the {formatR} package helps by automatically converting = to &lt;-:\n\nformatR::tidy_source(text = \"x=1:5\", arrow = TRUE)\n\nx &lt;- 1:5"
+  },
+  {
+    "objectID": "posts/assignments_in_r/index.html#the-difference",
+    "href": "posts/assignments_in_r/index.html#the-difference",
+    "title": "Assignments in R",
+    "section": "The difference",
+    "text": "The difference\nThe difference is clear when you use = and &lt;- to set an argument value in a function call:\n\nrm(x)\nmedian(x = 1:10)\n\n[1] 5.5\n\nx   \n\nError in eval(expr, envir, enclos): object 'x' not found\n\n\nIn this case, x is declared only within the function scope, it does not exist in the user workspace.\n\nrm(x)\n\nWarning in rm(x): object 'x' not found\n\nmedian(x &lt;- 1:10)\n\n[1] 5.5\n\nx    \n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nBut here, x is declared in the user workspace, so it can be used after the function call has been completed.\nNote that the spaces around the arrow help to clarify situations like x&lt;-3:\n\nDoes this mean assignment x &lt;- 3?\nOr less than x &lt; -3?"
   }
 ]
