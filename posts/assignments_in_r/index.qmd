@@ -19,11 +19,11 @@ or
 x = 3
 ```
 
-Both have the same effect, so does it matter which one we use? Long story short: not really.
+Both have the same effect, so does it matter which one we use? Long story short: not really, use `<-`.
 
 ## A bit of history
 
-Back in 1993, when R was first launched, `<-` was the only assignment operator. Meanwhile, `=` had a different role: it was (and still is) used for linking function arguments with their values, like in
+Back in 1993 when R was launched, `<-` was the only assignment operator. Meanwhile, `=` had a different role: it was (and still is) used for linking function arguments with their values, like in
 
 ```{r}
 rnorm(1, mean = 10)
