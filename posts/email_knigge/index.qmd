@@ -1,9 +1,9 @@
 ---
 title: "E-Mail-Knigge"
-subtitle: "Ein paar amüsante Nachrichten von Studierenden"
+subtitle: "Unterhaltsame Nachrichten von Studierenden"
 date: "2023-11-23"
-image: "mail0.png"
-draft: true
+image: "thumbnail.png"
+draft: false
 categories: [german, misc]
 ---
 

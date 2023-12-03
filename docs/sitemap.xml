@@ -2,10 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.loelschlaeger.de/blog/index.html</loc>
-    <lastmod>2023-12-03T15:55:28.758Z</lastmod>
+    <lastmod>2023-12-03T16:02:29.218Z</lastmod>
   </url>
   <url>
     <loc>https://www.loelschlaeger.de/blog/posts/assignments_in_r/index.html</loc>
-    <lastmod>2023-12-03T15:55:28.539Z</lastmod>
+    <lastmod>2023-12-03T15:58:54.789Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.loelschlaeger.de/blog/posts/email_knigge/index.html</loc>
+    <lastmod>2023-12-03T16:02:28.959Z</lastmod>
   </url>
 </urlset>
