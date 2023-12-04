@@ -163,22 +163,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Both have the same effect, so does it matter which one we use? Long story short: not really.</p>
+<p>Both have the same effect, so does it matter which one we use? Long story short: not really, use <code>&lt;-</code>.</p>
 <section id="a-bit-of-history" class="level2">
 <h2 class="anchored" data-anchor-id="a-bit-of-history">A bit of history</h2>
-<p>Back in 1993, when R was first launched, <code>&lt;-</code> was the only assignment operator. Meanwhile, <code>=</code> had a different role: it was (and still is) used for linking function arguments with their values, like in</p>
+<p>Back in 1993 when R was launched, <code>&lt;-</code> was the only assignment operator. Meanwhile, <code>=</code> had a different role: it was (and still is) used for linking function arguments with their values, like in</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="fl">0.01</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.2524</code></pre>
+<pre><code>[1] 9.99604</code></pre>
 </div>
 </div>
-<p>In 2001, to make things easier for new users, especially those familiar with languages like C, <a href="https://developer.r-project.org/equalAssign.html">the R team introduced the use of <code>=</code> as an assignment operator too</a>. The context now makes the intent clear: <code>x = 3</code> shall be an assignment, while <code>f(x = 3)</code> means calling function <code>f</code> with <code>x</code> set to <code>3</code>.</p>
+<p>In 2001, to make things easier for new users, especially those familiar with languages like C, <a href="https://developer.r-project.org/equalAssign.html">the R team introduced the use of <code>=</code> as an alternative assignment operator</a>. The context now makes the intent clear: <code>x = 3</code> shall be an assignment, while <code>f(x = 3)</code> means calling function <code>f</code> with <code>x</code> set to <code>3</code>.</p>
 </section>
 <section id="be-aware-of-ambiguity" class="level2">
 <h2 class="anchored" data-anchor-id="be-aware-of-ambiguity">Be aware of ambiguity</h2>
-<p>The <code>=</code> symbol now has two distinct meanings which can lead to ambiguity: either it is an assignment operator or a syntax token for named argument passing in function calls. R distinguishes these uses based on context.</p>
-<p>Within any code of the form <code>&lt;function_name&gt;(&lt;argname&gt; = &lt;value&gt;, ...)</code>, the <code>=</code> is the token for naming arguments and is <em>not</em> an assignment. There are also scenarios where using <code>=</code> is not allowed:</p>
+<p>Since 2001, the <code>=</code> symbol has two distinct meanings which can lead to ambiguity: either it is an assignment operator or a syntax token for named argument passing in function calls.</p>
+<p>R distinguishes these uses based on context.</p>
+<p>Within any code of the form <code>&lt;function_name&gt;(&lt;argname&gt; = &lt;value&gt;, ...)</code>, the <code>=</code> is the token for naming arguments and is <em>not</em> an assignment. There are also scenarios where <code>=</code> must not be used:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="at">x =</span> <span class="dv">3</span>) { }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -203,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                 ^</code></pre>
 </div>
 </div>
-<p>In contexts other than function calls, <code>=</code> refers to the assignment operator. In particular, merely putting parentheses around the sub-expression makes any of the above valid <em>and an assignment</em>:</p>
+<p>In any context other than function calls, <code>=</code> refers to the assignment operator. In particular, merely putting parentheses around the sub-expression makes any of the above valid <em>and an assignment</em>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(x)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> ((<span class="at">x =</span> <span class="dv">3</span>)) { }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
