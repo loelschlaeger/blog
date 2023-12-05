@@ -1,9 +1,12 @@
 ---
 title: "Creating an R package"
 subtitle: "Why and how?"
-date: "2023-11-23"
+date: "2023-12-05"
+image: "thumbnail.png"
+draft: true
 categories: [R]
 ---
+
 
 Open R Studio.
 
